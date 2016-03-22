@@ -1,0 +1,44 @@
+创建版本库：
+git init将当前目录变为仓库。
+
+编写新文件并提交：
+git add file1.txt
+git add file2.txt file3.txt
+git commit -m "add 3 files."
+git add将工作区文件加入到暂存区，git commit提交修改，-m参数跟改动注释。
+
+查看状态：
+git status
+
+对比工作区和仓库中文件：
+git diff readme.txt
+git diff HEAD -- readme.txt
+
+查看记录：
+git log
+git log --pretty=oneline
+前者查看完整记录，后者查看单行记录（仅版本号和-m改动注释）。
+
+版本回退：
+git reset --hard HEAD^
+git reset --hard HEAD~100
+git reset --hard [0-9]*
+HEAD^表示上一个版本，HEAD~100表示前100个版本，当然可以直接写版本号。
+
+查看之前的命令：
+git reflog
+用于从过去返回到未来。
+
+撤销修改：
+工作区修改而未提交到暂存区时：
+git checkout -- readme.txt
+工作区修改且已经提交到暂存区时：
+git reset HEAD readme.txt | git checkout -- readme.txt
+已经commit了，就只能版本回退了（gg）。。。
+
+删除：
+本地误删：
+git rm test.txt | git commit -m "remove test.txt"
+本地删除后仓库待删除：
+git checkout -- test.txt
+
