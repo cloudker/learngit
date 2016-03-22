@@ -42,3 +42,14 @@ git rm test.txt | git commit -m "remove test.txt"
 本地删除后仓库待删除：
 git checkout -- test.txt
 
+创建SSH KEY
+ssh-keygen -t rsa -C "youremail@example.com"
+得到的id_rsa.pub文件内容复制到github的Add SSH Key中，就可以access远程库了。
+
+github上创建learngit
+关联：
+git remote add origin https://github.com/cloudker/learngit.git
+第一次推送：
+git push -u origin master
+origin为远端库名字，这个是潜规则。
+此后的更新可以直接git push origin master
