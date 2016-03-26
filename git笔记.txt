@@ -53,3 +53,19 @@ git remote add origin https://github.com/cloudker/learngit.git
 git push -u origin master
 origin为远端库名字，这个是潜规则。
 此后的更新可以直接git push origin master
+
+创建并切换分支:
+git checkout -b dev
+相当于：git branch dev | git checkout dev
+
+查看分支：
+git branch
+
+切换分支：
+git checkout dev
+
+合并某分支到当前分支：
+git merge dev
+
+删除分支：
+git branch -d dev
